@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="description" content="Mason Overnight Oats — five high-protein overnight-oats recipes by Colton Riley, built in the jar and read bottom to top.">
+<meta name="theme-color" content="#ECE4D5" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#141109" media="(prefers-color-scheme: dark)">
+<meta property="og:title" content="Mason Overnight Oats">
+<meta property="og:description" content="Five high-protein overnight-oats recipes, built in the jar.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://oats.coltonriley.com/">
+<meta name="twitter:card" content="summary">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%AB%99%3C/text%3E%3C/svg%3E">
+<title>Mason Overnight Oats</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&family=Staatliches&display=swap">
+<style>
+  :root{
+    --paper:#ECE4D5; --card:#FBF8F1; --ink:#2A211B; --muted:#7C7264; --hair:#D8CFBD;
+    --green:#3B6B4E;
+    --glass:rgba(120,120,95,.06); --glassedge:rgba(107,69,48,.22);
+    --steel-a:#F0F1F3; --steel-b:#C4C6CC; --steel-c:#A6A8AF; --steel-d:#8E9096;
+    --emboss:rgba(107,69,48,.15); --emboss-hi:rgba(255,255,255,.5); --emboss-lo:rgba(42,33,27,.16);
+    --base-fill:#ECD6A2; --wet-fill:#F6EFDD;
+    --shadow:0 2px 4px rgba(42,33,27,.06),0 18px 44px rgba(42,33,27,.15);
+    /* per-flavor schemes (light) */
+    --active:#B2396A;
+  }
+  .s-berry{--p:#B2396A;--p-soft:#F1D8E2;--top-fill:#EBB7C8}
+  .s-cocoa{--p:#6B4530;--p-soft:#E7DACF;--top-fill:#F1C877}
+  .s-blue {--p:#3A63C0;--p-soft:#D7E0F5;--top-fill:#BAC9EE}
+  .s-red  {--p:#C63A2E;--p-soft:#F4D7D2;--top-fill:#F1AC9F}
+  .s-amber{--p:#A86C15;--p-soft:#EFE0BE;--top-fill:#EAC98A}
+
+  @media (prefers-color-scheme:dark){
+    :root:not([data-theme="light"]){
+      --paper:#141109; --card:#201C13; --ink:#F1EBDD; --muted:#A89C88; --hair:#342E21;
+      --green:#7CC29C;
+      --glass:rgba(150,150,110,.04); --glassedge:rgba(210,158,110,.24);
+      --steel-a:#7a7c82; --steel-b:#565860; --steel-c:#44464c; --steel-d:#35373c;
+      --emboss:rgba(255,240,215,.10); --emboss-hi:rgba(255,255,255,.14); --emboss-lo:rgba(0,0,0,.35);
+      --base-fill:#3E3416; --wet-fill:#2C2A1D;
+      --shadow:0 2px 4px rgba(0,0,0,.4),0 20px 48px rgba(0,0,0,.5);
+    }
+    :root:not([data-theme="light"]) .s-berry{--p:#E58BAC;--p-soft:#3A2530;--top-fill:#3E2530}
+    :root:not([data-theme="light"]) .s-cocoa{--p:#C48C64;--p-soft:#2B2318;--top-fill:#493811}
+    :root:not([data-theme="light"]) .s-blue {--p:#7FA0EC;--p-soft:#212A40;--top-fill:#232C43}
+    :root:not([data-theme="light"]) .s-red  {--p:#EE897E;--p-soft:#3A221D;--top-fill:#3F231D}
+    :root:not([data-theme="light"]) .s-amber{--p:#E0A94C;--p-soft:#332A16;--top-fill:#443311}
+  }
+  :root[data-theme="dark"]{
+      --paper:#141109; --card:#201C13; --ink:#F1EBDD; --muted:#A89C88; --hair:#342E21;
+      --green:#7CC29C;
+      --glass:rgba(150,150,110,.04); --glassedge:rgba(210,158,110,.24);
+      --steel-a:#7a7c82; --steel-b:#565860; --steel-c:#44464c; --steel-d:#35373c;
+      --emboss:rgba(255,240,215,.10); --emboss-hi:rgba(255,255,255,.14); --emboss-lo:rgba(0,0,0,.35);
+      --base-fill:#3E3416; --wet-fill:#2C2A1D;
+      --shadow:0 2px 4px rgba(0,0,0,.4),0 20px 48px rgba(0,0,0,.5);
+  }
+  :root[data-theme="dark"] .s-berry{--p:#E58BAC;--p-soft:#3A2530;--top-fill:#3E2530}
+  :root[data-theme="dark"] .s-cocoa{--p:#C48C64;--p-soft:#2B2318;--top-fill:#493811}
+  :root[data-theme="dark"] .s-blue {--p:#7FA0EC;--p-soft:#212A40;--top-fill:#232C43}
+  :root[data-theme="dark"] .s-red  {--p:#EE897E;--p-soft:#3A221D;--top-fill:#3F231D}
+  :root[data-theme="dark"] .s-amber{--p:#E0A94C;--p-soft:#332A16;--top-fill:#443311}
+
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--paper);color:var(--ink);
+    font-family:"Archivo",-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;line-height:1.5;-webkit-font-smoothing:antialiased}
+  .mono{font-family:"JetBrains Mono",ui-monospace,SFMono-Regular,Menlo,monospace;font-variant-numeric:tabular-nums}
+  .app{max-width:480px;margin:0 auto;min-height:100vh}
+
+  /* ---------- app bar + tabs ---------- */
+  .appbar{position:sticky;top:0;z-index:20;background:var(--paper);border-bottom:2px solid var(--active);transition:border-color .3s}
+  .appbar-in{display:flex;align-items:baseline;justify-content:space-between;padding:13px 18px 0}
+  .brand{font-family:"Staatliches",Impact,sans-serif;font-size:16px;letter-spacing:.1em;color:var(--ink)}
+  .brand span{color:var(--active);transition:color .3s}
+  .count{font-family:"JetBrains Mono",monospace;font-size:11px;color:var(--muted)}
+  .tabs{display:flex;gap:8px;overflow-x:auto;padding:11px 18px 12px;scrollbar-width:none}
+  .tabs::-webkit-scrollbar{display:none}
+  .tab{flex:0 0 auto;font-weight:700;font-size:12px;padding:7px 13px;border-radius:20px;border:1.5px solid var(--p);
+    color:var(--p);background:transparent;cursor:pointer;white-space:nowrap;transition:background .2s,color .2s;font-family:inherit}
+  .tab.active{background:var(--p);color:#fff}
+
+  /* ---------- stage ---------- */
+  .stage{position:relative;padding:20px 18px 6px;overflow:hidden}
+  .stage::before{content:"";position:absolute;top:-30px;left:50%;transform:translateX(-50%);
+    width:300px;height:210px;border-radius:50%;background:var(--active);opacity:.12;filter:blur(44px);pointer-events:none;z-index:0;transition:background .3s}
+  .slide{position:relative;z-index:1;display:none}
+  .slide.active{display:block;animation:pop .34s ease}
+  @keyframes pop{from{opacity:0;transform:translateY(10px) scale(.992)}to{opacity:1;transform:none}}
+  @media (prefers-reduced-motion:reduce){.slide.active{animation:none}}
+
+  /* ---------- card header ---------- */
+  .head{text-align:center;margin-bottom:16px}
+  .favtag{display:inline-block;font-family:"JetBrains Mono",monospace;font-size:9.5px;letter-spacing:.14em;text-transform:uppercase;
+    color:var(--p);background:var(--p-soft);padding:4px 11px;border-radius:20px;font-weight:700;margin-bottom:9px}
+  .brandrow{display:flex;align-items:center;justify-content:center;gap:10px;
+    font-family:"JetBrains Mono",monospace;font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:var(--p);font-weight:700}
+  .brandrow::before,.brandrow::after{content:"";height:2px;width:20px;border-radius:2px;background:var(--p);opacity:.45}
+  h1{font-family:"Staatliches",Impact,sans-serif;font-weight:400;font-size:clamp(36px,9vw,54px);line-height:.94;
+    letter-spacing:.03em;margin:9px 0 7px;text-wrap:balance;color:var(--p);text-transform:uppercase}
+  .tag{color:var(--muted);font-size:13.5px;max-width:38ch;margin:0 auto;line-height:1.4}
+  .specs{display:flex;justify-content:center;margin:14px auto 0;border:1px solid var(--hair);border-radius:11px;
+    overflow:hidden;width:max-content;max-width:100%;background:var(--card);box-shadow:0 1px 2px rgba(42,33,27,.05)}
+  .spec{padding:8px 15px;text-align:center}
+  .spec+.spec{border-left:1px solid var(--hair)}
+  .spec .v{font-family:"Staatliches",Impact,sans-serif;font-weight:400;font-size:23px;line-height:1;letter-spacing:.01em;color:var(--p)}
+  .spec.pro .v{color:var(--green)}
+  .spec .k{font-family:"JetBrains Mono",monospace;font-size:9.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-top:5px}
+
+  /* ---------- jar ---------- */
+  .jarwrap{max-width:360px;margin:4px auto 0;position:relative;--acc:var(--p);filter:drop-shadow(0 20px 24px rgba(42,33,27,.13))}
+  .cap{width:100%;height:27px;margin:0 auto -3px;position:relative;z-index:6;border-radius:8px 8px 5px 5px;
+    background:linear-gradient(180deg,var(--steel-b),var(--steel-c) 55%,var(--steel-d));
+    box-shadow:inset 0 1px 1px rgba(255,255,255,.45),inset 0 -2px 3px rgba(0,0,0,.22),0 2px 3px rgba(42,33,27,.22)}
+  .cap::before{content:"";position:absolute;top:3px;left:9px;right:9px;height:10px;border-radius:5px;z-index:2;
+    background:linear-gradient(180deg,var(--steel-a),var(--steel-b));box-shadow:inset 0 1px 2px rgba(255,255,255,.6),0 1px 0 rgba(0,0,0,.18)}
+  .cap::after{content:"";position:absolute;left:6px;right:6px;bottom:3px;height:11px;border-radius:3px;z-index:1;
+    background:repeating-linear-gradient(90deg,rgba(255,255,255,.32) 0,rgba(255,255,255,.32) 1px,transparent 1px,transparent 3.5px),
+               repeating-linear-gradient(90deg,rgba(0,0,0,.16) 1.5px,transparent 2.5px,transparent 3.5px)}
+  .jar{position:relative;border:2px solid var(--glassedge);
+    border-radius:26px 26px 30px 30px / 20px 20px 40px 40px;overflow:hidden;background:var(--glass);z-index:2;box-shadow:var(--shadow)}
+  .jar .shine{position:absolute;top:8px;bottom:22px;left:12px;width:12px;border-radius:12px;z-index:5;pointer-events:none;
+    background:linear-gradient(rgba(255,255,255,.42),rgba(255,255,255,0));opacity:.5}
+  .jar .shine.r{left:auto;right:10px;width:6px;opacity:.4}
+  .rim{height:13px;position:relative;z-index:1;background:var(--glass)}
+  .rim::before{content:"";position:absolute;left:10px;right:10px;top:4px;height:1.5px;border-radius:2px;background:var(--glassedge);opacity:.4;box-shadow:0 4px 0 var(--glassedge)}
+  .rim::after{content:"";position:absolute;left:0;right:0;bottom:0;height:6px;background:linear-gradient(rgba(42,33,27,.10),transparent)}
+
+  .layer{padding:11px 18px;position:relative;z-index:1}
+  .layer.base{padding-bottom:44px;background:var(--base-fill)}
+  .layer.wet{background:var(--wet-fill)}
+  .layer.top{background:var(--top-fill)}
+  .lhead{display:flex;align-items:center;gap:8px;margin-bottom:7px}
+  .lstep{font-family:"Staatliches",Impact,sans-serif;font-size:14px;color:#fff;background:var(--acc);
+    width:22px;height:22px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex:0 0 auto;box-shadow:0 2px 4px rgba(42,33,27,.22)}
+  .ltitle{font-weight:800;font-size:12.5px;color:var(--ink)}
+  .lnote{font-family:"JetBrains Mono",monospace;font-size:9px;letter-spacing:.09em;text-transform:uppercase;color:var(--acc);font-weight:700;margin-left:auto}
+  .ing{display:grid;grid-template-columns:16px 70px 1fr;gap:10px;align-items:baseline;padding:2px 0}
+  .ing .o{font-family:"JetBrains Mono",monospace;font-size:10px;font-weight:700;color:var(--acc);text-align:center}
+  .ing .q{font-family:"JetBrains Mono",monospace;font-size:12px;color:var(--ink);font-weight:500;opacity:.75}
+  .ing .n{font-size:13.5px;font-weight:600;color:var(--ink);line-height:1.3}
+  .ing.opt .n{color:var(--muted);font-weight:500}
+  .ing .n em{font-style:normal;color:var(--muted);font-weight:400;font-size:11.5px}
+  .do{display:flex;align-items:center;gap:9px;margin-top:6px;padding-top:7px;border-top:1px dashed var(--glassedge)}
+  .do .txt{font-size:12px;color:var(--ink);line-height:1.35}
+  .do .time{margin-left:auto;flex:0 0 auto;font-family:"JetBrains Mono",monospace;font-size:10px;font-weight:700;
+    letter-spacing:.02em;color:var(--acc);background:var(--card);border:1.5px solid var(--acc);border-radius:6px;padding:2px 8px;white-space:nowrap;box-shadow:0 1px 2px rgba(42,33,27,.08)}
+  .seam{position:relative;height:0;border-top:3px solid var(--ink);z-index:8}
+  .seam .pill{position:absolute;left:50%;top:0;transform:translate(-50%,-50%);z-index:9;color:#fff;
+    font-family:"JetBrains Mono",monospace;font-size:9px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;
+    padding:5px 12px;border-radius:20px;white-space:nowrap;box-shadow:0 3px 8px rgba(42,33,27,.28)}
+  .pill.chill{background:var(--ink)} .pill.pour{background:var(--acc)}
+  .emboss{position:absolute;left:0;right:0;bottom:10px;z-index:4;pointer-events:none;text-align:center;
+    font-family:"Staatliches",Impact,sans-serif;font-size:28px;line-height:1;letter-spacing:.14em;
+    color:var(--emboss);text-shadow:0 1.5px 0 var(--emboss-hi),0 -1px 1px var(--emboss-lo)}
+  .emboss small{display:block;font-family:"JetBrains Mono",monospace;font-size:8px;letter-spacing:.32em;color:var(--emboss);text-shadow:0 1px 0 var(--emboss-hi);margin-top:2px;font-weight:700}
+
+  .foot{max-width:360px;margin:13px auto 0;display:flex;justify-content:space-between;gap:12px;
+    font-family:"JetBrains Mono",monospace;font-size:10.5px;color:var(--muted);letter-spacing:.02em}
+  .foot b{color:var(--ink)}
+  .arrow{text-align:center;color:var(--muted);font-family:"JetBrains Mono",monospace;font-size:10.5px;letter-spacing:.05em;margin:9px 0 0}
+  .arrow b{color:var(--p)}
+
+  /* ---------- bottom nav ---------- */
+  .navbar{position:sticky;bottom:0;z-index:20;display:flex;align-items:center;justify-content:center;gap:18px;
+    padding:12px 18px calc(14px + env(safe-area-inset-bottom));background:linear-gradient(var(--paper) 40%,var(--paper))}
+  .nav-btn{width:42px;height:42px;border-radius:50%;border:1.5px solid var(--hair);background:var(--card);color:var(--ink);
+    font-size:18px;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:transform .15s}
+  .nav-btn:active{transform:scale(.92)}
+  .nav-btn:focus-visible{outline:2px solid var(--active);outline-offset:2px}
+  .dots{display:flex;gap:9px}
+  .dot{width:9px;height:9px;border-radius:50%;border:none;background:var(--hair);cursor:pointer;padding:0;transition:transform .2s,background .2s}
+  .dot.active{background:var(--p);transform:scale(1.3)}
+</style>
+</head>
+<body>
+<div class="app" id="app">
+  <div class="appbar">
+    <div class="appbar-in"><div class="brand">MASON <span>·</span> OVERNIGHT OATS</div><div class="count" id="count">01 / 05</div></div>
+    <div class="tabs" id="tabs"></div>
+  </div>
+
+  <div class="stage" id="stage"></div>
+
+  <div class="navbar">
+    <button class="nav-btn" id="prev" aria-label="Previous recipe">‹</button>
+    <div class="dots" id="dots"></div>
+    <button class="nav-btn" id="next" aria-label="Next recipe">›</button>
+  </div>
+</div>
+
+<script>
+const RECIPES=[
+ {cls:"s-cocoa",p:"#6B4530",short:"★ Choc PB Banana",fav:true,series:"No. 01 · Signature",
+  name:"Chocolate PB Banana",tag:"The powerhouse — chocolate protein, peanut butter, and banana. Eats like dessert.",
+  protein:"49g",cal:"733",fiber:"14g",prep:"5m",keeps:"4–5 days",diet:"Gluten-free",
+  base:{title:"Layer the dry base",note:"bottom → up",ings:[
+    {o:"a",q:"½ cup",n:"Rolled oats",em:"— flat on the bottom"},
+    {o:"b",q:"1 tbsp",n:"Chia seed"},
+    {o:"c",q:"1 scoop",n:"Chocolate Momentous",em:"— powder last"},
+    {o:"+",q:"1 scoop",n:"Collagen",em:"— optional, → 64g protein",opt:true}],
+   dos:[{txt:"Stir the dry so the powder won't clump.",time:"stir 10s"}]},
+  wet:{title:"Pour the wet in",note:"over the dry",ings:[
+    {o:"a",q:"½ cup",n:"Milk"},
+    {o:"b",q:"½ cup",n:"Greek yogurt"},
+    {o:"c",q:"1 tbsp",n:"Peanut butter"}],
+   dos:[{txt:"Pour milk, stir to loosen the powder.",time:"stir 15s"},{txt:"Add yogurt + PB, mix — no dry pockets.",time:"mix 30s"}]},
+  top:{title:"Top it & eat",note:"next morning",ings:[
+    {o:"a",q:"½",n:"Banana, sliced"},
+    {o:"b",q:"2 tbsp",n:"Kelly's granola",em:"— add last, stays crunchy"}],
+   dos:[{txt:"Stir, splash in milk if thick, then top.",time:"serve cold"}]}},
+
+ {cls:"s-berry",p:"#B2396A",short:"Berry Yogurt",series:"No. 02 · Yogurt & Honey",
+  name:"Strawberry Blueberry",tag:"Creamy Greek-yogurt oats with both berries and a honey drizzle — the house favorite.",
+  protein:"25g",cal:"537",fiber:"12g",prep:"5m",keeps:"4–5 days",diet:"Gluten-free",
+  base:{title:"Layer the dry base",note:"bottom → up",ings:[
+    {o:"a",q:"½ cup",n:"Rolled oats",em:"— flat on the bottom"},
+    {o:"b",q:"1 tbsp",n:"Chia seed"}],
+   dos:[{txt:"Stir the dry together.",time:"stir 10s"}]},
+  wet:{title:"Pour the wet in",note:"over the dry",ings:[
+    {o:"a",q:"½ cup",n:"Milk"},
+    {o:"b",q:"½ cup",n:"Greek yogurt",em:"— plain or vanilla"},
+    {o:"c",q:"1 tbsp",n:"Honey",em:"— save a drizzle"}],
+   dos:[{txt:"Pour milk, stir to loosen.",time:"stir 15s"},{txt:"Add yogurt + honey, mix smooth.",time:"mix 20s"}]},
+  top:{title:"Top it & eat",note:"next morning",ings:[
+    {o:"a",q:"¼ cup",n:"Strawberries",em:"— stir half in at night"},
+    {o:"b",q:"¼ cup",n:"Blueberries"},
+    {o:"c",q:"2 tbsp",n:"Kelly's granola",em:"— add last, stays crunchy"}],
+   dos:[{txt:"Top with fruit, granola + a honey drizzle.",time:"serve cold"}]}},
+
+ {cls:"s-blue",p:"#3A63C0",short:"Blueberry Honey",series:"No. 03 · 5-Minute",
+  name:"Blueberry Honey",tag:"The stripped-down classic: oats, milk, honey, blueberries, and extra Kelly's crunch.",
+  protein:"17g",cal:"545",fiber:"13g",prep:"5m",keeps:"4–5 days",diet:"Gluten-free",
+  base:{title:"Layer the dry base",note:"bottom → up",ings:[
+    {o:"a",q:"½ cup",n:"Rolled oats",em:"— flat on the bottom"},
+    {o:"b",q:"1 tbsp",n:"Chia seed",em:"— optional, for thickness"}],
+   dos:[{txt:"Stir the dry together.",time:"stir 10s"}]},
+  wet:{title:"Pour the wet in",note:"over the dry",ings:[
+    {o:"a",q:"¾ cup",n:"Milk",em:"— more, since there's no yogurt"},
+    {o:"b",q:"1 tbsp",n:"Honey"}],
+   dos:[{txt:"Pour milk + honey, stir well.",time:"stir 20s"}]},
+  top:{title:"Top it & eat",note:"next morning",ings:[
+    {o:"a",q:"½ cup",n:"Blueberries"},
+    {o:"b",q:"3 tbsp",n:"Kelly's granola",em:"— it's the star here"}],
+   dos:[{txt:"Stir, top with berries + granola.",time:"serve cold"}]}},
+
+ {cls:"s-red",p:"#C63A2E",short:"Strawberry Banana",series:"No. 04 · Fruit-Forward",
+  name:"Strawberry Banana",tag:"Smoothie flavors in a spoon — banana goes custardy overnight, strawberries keep it bright.",
+  protein:"25g",cal:"570",fiber:"13g",prep:"5m",keeps:"4–5 days",diet:"Gluten-free",
+  base:{title:"Layer the dry base",note:"bottom → up",ings:[
+    {o:"a",q:"½ cup",n:"Rolled oats",em:"— flat on the bottom"},
+    {o:"b",q:"1 tbsp",n:"Chia seed"}],
+   dos:[{txt:"Stir the dry together.",time:"stir 10s"}]},
+  wet:{title:"Pour the wet in",note:"over the dry",ings:[
+    {o:"a",q:"½ cup",n:"Milk"},
+    {o:"b",q:"½ cup",n:"Greek yogurt"},
+    {o:"c",q:"1 tbsp",n:"Honey",em:"— skip if banana's ripe"}],
+   dos:[{txt:"Pour milk, stir.",time:"stir 15s"},{txt:"Add yogurt + honey, mix smooth.",time:"mix 20s"}]},
+  top:{title:"Top it & eat",note:"next morning",ings:[
+    {o:"a",q:"¼ cup",n:"Strawberries"},
+    {o:"b",q:"½",n:"Banana",em:"— mash half in at night to sweeten"},
+    {o:"c",q:"2 tbsp",n:"Kelly's granola"}],
+   dos:[{txt:"Stir, top with fruit + granola.",time:"serve cold"}]}},
+
+ {cls:"s-amber",p:"#A86C15",short:"Banana Bread",series:"No. 05 · Dessert-Leaning",
+  name:"Banana Bread",tag:"Cinnamon, brown sugar, and mashed banana — tastes like the loaf, eats like breakfast.",
+  protein:"29g",cal:"623",fiber:"13g",prep:"5m",keeps:"4–5 days",diet:"Gluten-free",
+  base:{title:"Layer the dry base",note:"bottom → up",ings:[
+    {o:"a",q:"½ cup",n:"Rolled oats",em:"— flat on the bottom"},
+    {o:"b",q:"1 tbsp",n:"Chia seed"}],
+   dos:[{txt:"Stir the dry together.",time:"stir 10s"}]},
+  wet:{title:"Pour the wet in",note:"over the dry",ings:[
+    {o:"a",q:"½ cup",n:"Milk"},
+    {o:"b",q:"½ cup",n:"Greek yogurt"},
+    {o:"c",q:"½",n:"Banana, mashed",em:"+ ½ tsp cinnamon"},
+    {o:"d",q:"1 tbsp",n:"Peanut butter",em:"+ ½–1 tsp brown sugar"}],
+   dos:[{txt:"Mash banana in, add wet, mix well.",time:"mix 30s"}]},
+  top:{title:"Top it & eat",note:"next morning",ings:[
+    {o:"a",q:"2 tbsp",n:"Kelly's granola"}],
+   dos:[{txt:"Eat cold, or warm 30s for cozy.",time:"serve"}]}}
+];
+
+const esc=s=>String(s).replace(/&/g,"&amp;").replace(/</g,"&lt;");
+function layer(step,cls,L){
+  const ings=L.ings.map(i=>`<div class="ing${i.opt?' opt':''}"><span class="o">${i.o}</span><span class="q">${esc(i.q)}</span><span class="n">${esc(i.n)}${i.em?` <em>${esc(i.em)}</em>`:''}</span></div>`).join('');
+  const dos=L.dos.map(d=>`<div class="do"><span class="txt">${esc(d.txt)}</span><span class="time">${esc(d.time)}</span></div>`).join('');
+  return `<div class="layer ${cls}"><div class="lhead"><span class="lstep">${step}</span><span class="ltitle">${esc(L.title)}</span><span class="lnote">${esc(L.note)}</span></div>${ings}${dos}</div>`;
+}
+function card(r,i){
+  return `<section class="slide ${r.cls}${i===0?' active':''}" data-i="${i}">
+    <div class="head">
+      ${r.fav?'<div class="favtag">★ Your favorite</div>':''}
+      <div class="brandrow">${esc(r.series)}</div>
+      <h1>${esc(r.name)}</h1>
+      <p class="tag">${esc(r.tag)}</p>
+      <div class="specs">
+        <div class="spec pro"><div class="v">${r.protein}</div><div class="k">Protein</div></div>
+        <div class="spec"><div class="v">${r.cal}</div><div class="k">Calories</div></div>
+        <div class="spec"><div class="v">${r.fiber}</div><div class="k">Fiber</div></div>
+        <div class="spec"><div class="v">${r.prep}</div><div class="k">Prep</div></div>
+      </div>
+    </div>
+    <div class="jarwrap">
+      <div class="cap"></div>
+      <div class="jar">
+        <div class="shine"></div><div class="shine r"></div>
+        <div class="rim"></div>
+        ${layer(3,'top',r.top)}
+        <div class="seam"><span class="pill chill">then · chill 6h+ overnight</span></div>
+        ${layer(2,'wet',r.wet)}
+        <div class="seam"><span class="pill pour">pour over ↑</span></div>
+        ${layer(1,'base',r.base)}
+        <div class="emboss">MASON<small>OVERNIGHT OATS</small></div>
+      </div>
+    </div>
+    <div class="foot"><span>Serves <b>1</b></span><span>Keeps <b>${esc(r.keeps)}</b></span><span>${esc(r.diet)}</span></div>
+    <p class="arrow">↑ built bottom to top ·&nbsp; <b>follow 1 → 2 → 3</b></p>
+  </section>`;
+}
+
+const app=document.getElementById('app'),stage=document.getElementById('stage'),
+      tabs=document.getElementById('tabs'),dots=document.getElementById('dots'),count=document.getElementById('count');
+stage.innerHTML=RECIPES.map(card).join('');
+tabs.innerHTML=RECIPES.map((r,i)=>`<button class="tab ${r.cls}${i===0?' active':''}" data-i="${i}">${esc(r.short)}</button>`).join('');
+dots.innerHTML=RECIPES.map((r,i)=>`<button class="dot ${r.cls}${i===0?' active':''}" data-i="${i}" aria-label="${esc(r.name)}"></button>`).join('');
+
+const slides=[...stage.children],tabEls=[...tabs.children],dotEls=[...dots.children];
+let cur=0;
+function go(i){
+  i=(i+RECIPES.length)%RECIPES.length;
+  slides[cur].classList.remove('active');tabEls[cur].classList.remove('active');dotEls[cur].classList.remove('active');
+  cur=i;
+  slides[cur].classList.add('active');tabEls[cur].classList.add('active');dotEls[cur].classList.add('active');
+  app.style.setProperty('--active',RECIPES[cur].p);
+  count.textContent=String(cur+1).padStart(2,'0')+' / '+String(RECIPES.length).padStart(2,'0');
+  tabEls[cur].scrollIntoView({inline:'center',block:'nearest',behavior:'smooth'});
+  stage.scrollIntoView({block:'start',behavior:'smooth'});
+}
+tabs.addEventListener('click',e=>{const b=e.target.closest('.tab');if(b)go(+b.dataset.i);});
+dots.addEventListener('click',e=>{const b=e.target.closest('.dot');if(b)go(+b.dataset.i);});
+document.getElementById('prev').addEventListener('click',()=>go(cur-1));
+document.getElementById('next').addEventListener('click',()=>go(cur+1));
+document.addEventListener('keydown',e=>{if(e.key==='ArrowLeft')go(cur-1);if(e.key==='ArrowRight')go(cur+1);});
+let sx=0,sy=0;
+stage.addEventListener('touchstart',e=>{sx=e.changedTouches[0].clientX;sy=e.changedTouches[0].clientY;},{passive:true});
+stage.addEventListener('touchend',e=>{const dx=e.changedTouches[0].clientX-sx,dy=e.changedTouches[0].clientY-sy;
+  if(Math.abs(dx)>45&&Math.abs(dx)>Math.abs(dy)*1.5)go(cur+(dx<0?1:-1));},{passive:true});
+app.style.setProperty('--active',RECIPES[0].p);
+</script>
+
+</body>
+</html>
